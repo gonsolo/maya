@@ -1,2 +1,2 @@
-# Gonzo.cpp is a hello world plugin for Maya 2016
+# Maya plugin hello world in C++ and Python
 
