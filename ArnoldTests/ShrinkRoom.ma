@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: ShrinkRoom.ma
-//Last modified: Fri, Feb 17, 2017 04:39:52 PM
+//Last modified: Fri, Feb 17, 2017 04:43:05 PM
 //Codeset: 1252
 requires maya "2017";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiAreaLight"
@@ -171,7 +171,8 @@ createNode aiAreaLight -n "DeckenlampeShape" -p "Deckenlampe";
 	setAttr ".rcsh" no;
 	setAttr ".sc" -type "float3" 1 0.98907667 0.92900002 ;
 	setAttr ".intensity" 4.2207794189453125;
-	setAttr ".ai_exposure" 17;
+	setAttr ".ai_exposure" 16;
+	setAttr ".ai_samples" 2;
 	setAttr ".ai_translator" -type "string" "quad";
 createNode transform -n "Hansel";
 	rename -uid "2D4BFAB8-4D77-1D77-BDF1-97BB2D5B2AAF";
@@ -940,10 +941,11 @@ createNode renderSetup -n "renderSetup";
 	rename -uid "AD6F63F0-4D24-4FFC-FCA8-0B96FE3D9D06";
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "BFAE99C5-4403-6B8A-86F6-26936E2674B4";
-	setAttr ".AA_samples" 1;
-	setAttr ".GI_glossy_samples" 1;
-	setAttr ".GI_refraction_samples" 1;
-	setAttr ".GI_volume_samples" 1;
+	setAttr ".AA_samples" 0;
+	setAttr ".GI_glossy_samples" 0;
+	setAttr ".GI_refraction_samples" 0;
+	setAttr ".GI_sss_samples" 4;
+	setAttr ".GI_volume_samples" 0;
 	setAttr ".GI_diffuse_depth" 3;
 	setAttr ".GI_glossy_depth" 0;
 	setAttr ".GI_reflection_depth" 0;
@@ -1115,10 +1117,10 @@ select -ne :defaultRenderGlobals;
 	setAttr ".outf" 51;
 	setAttr ".imfkey" -type "string" "exr";
 select -ne :defaultResolution;
-	setAttr ".w" 640;
-	setAttr ".h" 480;
+	setAttr ".w" 320;
+	setAttr ".h" 240;
 	setAttr ".pa" 1;
-	setAttr ".dar" 1.3333333730697632;
+	setAttr ".dar" 1.3329999446868896;
 select -ne :defaultLightSet;
 	setAttr -s 7 ".dsm";
 select -ne :defaultColorMgtGlobals;
