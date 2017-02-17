@@ -1,0 +1,4 @@
+Log file created at: 2017/01/27 01:42:18
+Running on machine: DESKTOP-10VJUQN
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0127 01:42:18.845930 38780 parallel.cpp:113] Started execution in worker thread 3

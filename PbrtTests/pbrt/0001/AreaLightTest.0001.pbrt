@@ -1,0 +1,57 @@
+Film "image"
+	"integer xresolution" [320]
+	"integer yresolution" [240]
+	"string filename" ["C:/Users/gonso/work/Maya/PbrtTests/pbrt//renders/AreaLightTest.0001.tga"]
+
+Sampler "lowdiscrepancy"
+	"integer pixelsamples" [1]
+
+PixelFilter "gaussian"
+	"float xwidth" [2.000000]
+	"float ywidth" [2.000000]
+	"float alpha" [2.000000]
+
+
+Integrator "directlighting"
+
+Accelerator "bvh"
+	"integer maxnodeprims" [7]
+
+
+Scale -1 1 1
+LookAt -55.282532 -74.437993 106.431745
+	-0.000000 0.000000 -0.000000
+	0.449555 0.605327 0.656871
+
+Camera "perspective"
+	"float fov" [54.432223]
+	"float focaldistance" [141.155551]
+	"float lensradius" [0.000000]
+	"float screenwindow" [-1.000000 1.000000 -0.750000 0.750000]
+	"float shutteropen" [0.000000]
+	"float shutterclose" [1.000000]
+
+
+WorldBegin
+
+# Translated Lambert Material lambert1
+MakeNamedMaterial "lambert1" "string type" ["matte"]
+	 "color Kd" [0.500000 0.500000 0.500000] 
+
+# Area Light |areaLight1|areaLightShape1
+AttributeBegin
+TransformBegin
+	ConcatTransform [1.000000 0.000000 0.000000 0.000000
+	                 0.000000 0.000000 1.000000 0.000000
+	                 0.000000 -1.000000 0.000000 0.000000
+	                 0.000000 0.000000 100.0 1.000000]
+	AreaLightSource "diffuse" "integer samples" 1 "rgb L" [1.114000 1.114000 1.114000]
+		Shape "sphere" "float radius" [12.25]
+TransformEnd
+AttributeEnd
+
+Include "C:/Users/gonso/work/Maya/PbrtTests/pbrt/0001/AreaLightTest.0001.geo.pbrt"
+Include "C:/Users/gonso/work/Maya/PbrtTests/pbrt/0001/AreaLightTest.0001.areaLgt.pbrt"
+
+
+WorldEnd
